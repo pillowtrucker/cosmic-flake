@@ -1,6 +1,6 @@
 { lib, rustPlatform, pkg-config, just, makeBinaryWrapper, libcosmicAppHook
 , libxkbcommon, wayland, vulkan-loader, libglvnd, mesa, libinput, fontconfig
-, freetype, xorg }:
+, freetype, xorg, fetchFromGitHub }:
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-screenshot";
@@ -8,13 +8,13 @@ rustPlatform.buildRustPackage rec {
   src = fetchFromGitHub {
     owner = "pillowtrucker";
     repo = "cosmic-screenshot";
-    rev = "${finalAttrs.version}";
-    hash = "";
+    rev = "${version}";
+    hash = "sha256-8P4N1J8MFJCh1dhEU30drIjTZUe8kuCcpirFD8fN1KM=";
     fetchSubmodules = true;
   };
 
   cargoLock = {
-    lockFile = ./cosmic-screenshot/Cargo.lock;
+    lockFile = "${src}/Cargo.lock";
     outputHashes = {
       "accesskit-0.16.0" =
         "sha256-yeBzocXxuvHmuPGMRebbsYSKSvN+8sUsmaSKlQDpW4w=";
