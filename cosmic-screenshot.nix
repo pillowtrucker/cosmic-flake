@@ -4,7 +4,7 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-screenshot";
-  version = "3bb2b943757e64ada69eea36f59b2ccf4d553f67";
+  version = "b7773e1713c3949e10d9aa28c0c3c29ba3dc497b";
   src = fetchFromGitHub {
     owner = "pillowtrucker";
     repo = "cosmic-screenshot";
