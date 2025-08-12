@@ -4,12 +4,12 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-screenshot";
-  version = "11e122336f22942435685adc0aa55229d07e4803";
+  version = "914a9be9bdbd091fc399f1f00d507490d263922f";
   src = fetchFromGitHub {
     owner = "pillowtrucker";
     repo = "cosmic-screenshot";
     rev = "${version}";
-    hash = "sha256-1j+3JGAh/9moqPx1/Lsac2JQUNgGSRP/GWJC9WrDxSs=";
+    hash = "sha256-LaW+njFVYRic54iy6f6MD8rcnyfTSgax/resHrbEiBg=";
     fetchSubmodules = true;
   };
 
