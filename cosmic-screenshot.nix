@@ -4,12 +4,12 @@
 
 rustPlatform.buildRustPackage rec {
   pname = "cosmic-screenshot";
-  version = "d67702e59f485b4c6ed53da15cc7fa5a6c5bfae9";
+  version = "11e122336f22942435685adc0aa55229d07e4803";
   src = fetchFromGitHub {
     owner = "pillowtrucker";
     repo = "cosmic-screenshot";
     rev = "${version}";
-    hash = "sha256-8P4N1J8MFJCh1dhEU30drIjTZUe8kuCcpirFD8fN1KM=";
+    hash = "sha256-1j+3JGAh/9moqPx1/Lsac2JQUNgGSRP/GWJC9WrDxSs=";
     fetchSubmodules = true;
   };
 
@@ -115,6 +115,8 @@ rustPlatform.buildRustPackage rec {
           mesa
         ]
       }
+    substituteInPlace $out/share/applications/com.system76.CosmicScreenshot.desktop \
+      --replace 'Exec=cosmic-screenshot' "Exec=$out/bin/cosmic-screenshot"
   '';
 
   doCheck = false; # Skip tests for now
